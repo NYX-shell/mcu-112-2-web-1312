@@ -1,3 +1,6 @@
+body{
+    margin: 0px;
+}
 header{
     text-align:center;
 }
@@ -30,10 +33,16 @@ td.col3{
     width: 100px;
     text-align: right;
 }
-td.card {
+div{
+    margin: 5px 0px;
+}
+.card {
     width: 250px;
     border-style: solid;
     border-color: #999;
     border-width: 1px;
     border-radius: 8px;
+}
+footer{
+    margin: 15px 0px 0px 0px;
 }
