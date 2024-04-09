@@ -54,6 +54,16 @@ td.col3{
 div{
     margin: 5px 0px;
 }
+.cardholder{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-basis: 0;
+    order: 0;
+}
 .card {
     width: 250px;
     border-style: solid;
