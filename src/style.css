@@ -8,6 +8,13 @@ body{
 section{
     margin: 0 5%;
 }
+a{
+    border: solid 1px #999;
+    padding: 8px;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+}
 input[type="text"]{
     width: 200px;
     line-height: 25px;
