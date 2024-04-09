@@ -1,5 +1,6 @@
 header{
     text-align:center;
+    color: rgb(0, 0, 0, 0.8);
 }
 body{
     margin: 0px;
@@ -15,6 +16,10 @@ table{
     border: solid 1px;
     border-collapse: collapse;
     width:100%;
+}
+th{
+    background-color: #777777;
+    color: white;
 }
 th, td{
     border: solid 1px;
