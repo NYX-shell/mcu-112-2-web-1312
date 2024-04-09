@@ -1,12 +1,36 @@
-input[type="text"]{
-    width: 200px;
-    line-height: 25px;
-}
 header{
     text-align:center;
 }
 
-.card {
+input[type="text"]{
+    width: 200px;
+    line-height: 25px;
+}
+table{
+    border: solid 1px;
+    border-collapse: collapse;
+    width:100%;
+}
+th, td{
+    border: solid 1px;
+    height: 30px;
+}
+td.col0{
+    width: 120px;
+    text-align: center;
+}
+td.col1{
+    height: 30px;
+}
+td.col2{
+    width: 150px;
+    text-align: center;
+}
+td.col3{
+    width: 100px;
+    text-align: right;
+}
+td.card {
     width: 250px;
     border-style: solid;
     border-color: #999;
