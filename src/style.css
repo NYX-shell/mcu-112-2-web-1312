@@ -32,6 +32,10 @@ th, td{
     border: solid 1px;
     height: 30px;
 }
+tr:hover{
+    background-color: yellow;
+    color:black;
+}
 td.col0{
     width: 120px;
     text-align: center;
