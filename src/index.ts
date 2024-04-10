@@ -6,7 +6,5 @@ const product = new Product(
     500,
     true,
     new Date(),
-    undefined
 );
 console.log(product);
-console.table(product);
