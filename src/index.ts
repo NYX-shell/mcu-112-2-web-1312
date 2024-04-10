@@ -16,4 +16,9 @@ new Product(
     new Date(),
 ),
 ];
+setProductDisplay(product[1], false);
 console.log(product);
+
+function setProductDisplay(product:Product, isShow:boolean){
+    product.isShow = isShow;
+}
