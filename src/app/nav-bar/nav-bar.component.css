@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+a{
+  display: inline-block;
+  color: #005cbb;
+  padding: 10px 20px;
+  cusor: pointer;
+}
+
+a,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+a:hover{
+  background-color: #005cbb33;
+}
