@@ -6,7 +6,7 @@ export class Product {
 
   id!: number;
   name!: string;
-  authors!: string;
+  authors!: string[];
   company!: string;
   isShow!: boolean;
   imgUrl!: string;
