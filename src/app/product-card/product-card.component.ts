@@ -10,7 +10,6 @@ import { Component, Input, booleanAttribute, numberAttribute, Output, EventEmitt
 })
 export class ProductCardComponent {
   @Input({ required: true, transform: numberAttribute }) id!: number;
-
   @Input() productName!: string;
   @Input() authors!: string[];
   @Input() company!: string;
@@ -18,15 +17,13 @@ export class ProductCardComponent {
 
   @Input({ transform: booleanAttribute })
   isShow!: boolean;
-  @Output()
-  isShowChange = new EventEmitter<boolean>
 
   @Input() createDate!: Date;
   @Input({transform: numberAttribute }) price!: number;
 
   @HostBinding('class')
   class = 'product-card';
-  onSetDisplay(isShow: boolean): void {
-    this.isShowChange.emit(isShow);
-  }
+
+  @Output()
+  view = new EventEmitter<void>();
 }

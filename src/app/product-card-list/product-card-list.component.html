@@ -6,9 +6,10 @@
     [authors]="product.authors"
     [company]="product.company"
     [imgUrl]="product.imgUrl"
-    [(isShow)]="product.isShow"
+    [isShow]="product.isShow"
     [createDate]="product.createDate"
     [price]="product.price"
+    (view)="view.emit(product)"
   ></app-product-card>
   }
   @empty {
