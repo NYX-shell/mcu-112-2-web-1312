@@ -6,7 +6,8 @@ a{
   display: inline-block;
   color: #005cbb;
   padding: 10px 20px;
-  cusor: pointer;
+  cursor: pointer;
+  :q
 }
 
 a,
@@ -18,4 +19,7 @@ a:focus {
 
 a:hover{
   background-color: #005cbb33;
+}
+.active {
+  background-color: #005cbb1a;
 }
