@@ -1,1 +1,5 @@
+<div class="toobar">
+  <button type="button" (click)="onAdd()">新增</button>
+</div>
+
 <app-product-card-list [products]="products" (edit)="onEdit($event)" (view)="onView($event)"></app-product-card-list>
