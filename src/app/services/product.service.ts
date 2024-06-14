@@ -1,3 +1,4 @@
+import { Observable, of, delay } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Product } from '../model/product';
 
@@ -52,8 +53,8 @@ export class ProductService {
     return this._data.find(({ id }) => id === productId)!;
   }
 
-  getList(): Product[]{
-    return this._data;
+  getList(): Observable<Product[]>{
+    return of(this._data).pipe(delay(2000));
   }
 
   add(product: Product): void{

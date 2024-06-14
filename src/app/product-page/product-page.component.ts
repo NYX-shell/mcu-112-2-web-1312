@@ -18,8 +18,8 @@ export class ProductPageComponent implements OnInit{
 
   products!: Product[];
 
-  ngOnInit(){
-    this.products = this.productService.getList();
+  ngOnInit(): void{
+    this.productService.getList().subscribe((products) => (this.products = products));
   }
 
   onAdd():void{
