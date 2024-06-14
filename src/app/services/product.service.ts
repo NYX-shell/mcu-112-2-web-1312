@@ -55,7 +55,7 @@ export class ProductService {
   }
 
   getList(): Observable<Product[]>{
-    return of(this._data).pipe(delay(2000));
+    return of(this._data);
   }
 
   add(product: Product): Observable<Product>{
@@ -73,8 +73,8 @@ export class ProductService {
   }
 
   remove(productId: number): Observable<Product>{
-    const index = this._data.findIndex(({ id }) => productId === id );
-    const product = this._data.splice(index, 1);
-    return of(product[0]);
+    const product = this._data.find(({ id }) => productId === id )!;
+    this._data = [...this._data.filter(({ id }) => productId !== id )]
+    return of(product);
   }
 }
