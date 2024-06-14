@@ -1,4 +1,4 @@
-<img [src]='product.imgUrl' />
+<img [src]="product.imgUrl" />
 <section>
   <h2>{{ product.name }}</h2>
   <div>
@@ -7,7 +7,7 @@
       @for (author of product.authors; track author){
       <span>{{author}}</span>
       @if(!$last){
-      <span> ` </span>
+      <span> 、 </span>
       }}
     </span>
   </div>
@@ -23,7 +23,7 @@
     <button class="button" (click)="onBack()">返回</button>
     <span>
       <button type="button" class="edit" (click)="onEdit()">編輯</button>
-      <button type="button" class="remove">刪除</button>
+      <button type="button" class="remove" (click)="onRemove()">刪除</button>
     </span>
   </div>
 </section>
