@@ -24,9 +24,23 @@
       "company": "博碩文件",
       "isShow": true,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
-      "createDate": "2024-06-16T07:43:33.535Z",
+      "createDate": "2024-06-16T07:50:43.233Z",
       "price": 10000,
-      "id": 2
+      "id": 3
+    },
+    {
+      "name": "書籍 Z",
+      "authors": [
+        "作者甲",
+        "作者乙",
+        "作者丙"
+      ],
+      "company": "博碩文件",
+      "isShow": true,
+      "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
+      "createDate": "2024-06-16T07:50:45.834Z",
+      "price": 10000,
+      "id": 5
     }
   ]
 }
