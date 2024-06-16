@@ -1,5 +1,5 @@
 # Get List
-GET http://[::]:3000/products HTTP/1.1
+GET http://[::]:3000/products?name= HTTP/1.1
 
 ###
 
