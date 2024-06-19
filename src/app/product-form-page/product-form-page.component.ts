@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Data, Router} from '@angular/router';
 import { Product } from '../model/product';
-import { map } from 'rxjs';
+import { map, tap, filter } from 'rxjs';
 import { JsonPipe} from '@angular/common';
 import { Validators, FormGroup, FormControl, ReactiveFormsModule, FormArray } from '@angular/forms';
 import { IProductForm } from '../interface/product-form.interface';
@@ -25,6 +25,10 @@ export class ProductFormPageComponent implements OnInit{
     isShow: new FormControl<boolean>(false, {nonNullable: true }),
     price: new FormControl<number | null>(null, {validators: [Validators.required]}),
   })
+
+  get id(): FormControl<number | null>{
+    return this.form.get('id') as FormControl<number | null>;
+  }
 
   get name(): FormControl<string | null>{
     return this.form.get('name') as FormControl<string | null>;
@@ -50,29 +54,34 @@ export class ProductFormPageComponent implements OnInit{
 
   private readonly productService = inject(ProductService);
 
-  product!:Product;
-
   ngOnInit(): void{
-    this.route.data.pipe(
-      map(({ product }: Data) => product)
-    ).subscribe((product) => this.product = product);
+    this.route.data
+      .pipe(
+        map(({ product }: Data) => product as Product),
+        filter((product)=> !!product),
+        tap(({ authors}) => this.onAddAuthors(authors.length))
+      )
+      .subscribe((product) => this.form.patchValue(product));
   }
 
-  onAddAuthors(): void{
-  const formControl = new FormControl<string | null>(null ,{validators: [Validators.required]});
-    this.authors.push(formControl);
+  onAddAuthors(count = 1): void{
+    for(let i=1;i<=count;i++){
+      const formControl = new FormControl<string | null>(null ,{validators: [Validators.required]});
+      this.authors.push(formControl);
+    }
   }
 
   onSave():void{
     const formData = new Product({
+      id: this.id.value ?? undefined,
       name: this.name.value!,
       authors: this.authors.value.map(author => author!),
       company: this.company.value!,
       isShow: this.isShow.value,
       createDate: new Date(),
-      imgUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
       price: this.price.value!
     });
+    const action$ =this.id.value ? this.productService.update(formData):
     this.productService.add(formData).subscribe(()=> this.router.navigate(['products']))
   }
 
