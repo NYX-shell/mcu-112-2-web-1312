@@ -60,6 +60,5 @@ button.save {
 button.save:disabled {
   background-color: #ccc;
   color: #999;
-  cusor: not-allowed;
+  cursor: not-allowed;
 }
-
